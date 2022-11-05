@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://james.buzz
+
+# Sitemaps
+Sitemap: https://james.buzz/sitemap.xml

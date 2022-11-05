@@ -1,0 +1,129 @@
+---
+title: 'How to use P5.js in React'
+abstract: 'This tutorial will show you how to integrate the P5.js library into the popular web framework, React. '
+category: 'code'
+published: '25/08/2022'
+thumbnail: 'p5.jpg'
+---
+
+<a href={"https://p5js.org/"}>p5.js</a> is a Javascript package that makes it easy to create visual graphics in
+the browser.
+These visuals are created by p5.js using the html <CodeBlock>&#60;canvas&#62;</CodeBlock> element.
+
+The HTML <CodeBlock>&#60;canvas&#62;</CodeBlock> element is used to draw graphics in javascript on the fly.
+The <CodeBlock>&#60;canvas&#62;</CodeBlock> element is simply a container for graphics.
+To create the graphics on canvas, you can utilise Javascript.
+You must use Javascript to actually draw the graphics.
+Canvas includes a variety of tools for creating paths, boxes, circles, text, and images.
+
+Here is an example of what you can do with Canvas using ball physics:
+
+<ExampleCanvas />
+
+<small><center>Click to interact</center></small>
+
+
+
+
+### How to install
+You need to install these libraries to integrate p5.js into react
+
+```text
+npm i --save p5 react-p5
+```
+
+
+
+
+### The code
+Now we are ready to write some code.
+
+We will start by creating a new React component that will render the react-p5 Sketch component.
+The Sketch component will handle the canvas and allow you to input your p5.js sketches.
+
+```tsx
+import Sketch from "react-p5";
+import p5Types from "p5";
+
+const p5Component = () => {
+    const setup = (p5: p5Types, canvasRef: any) => {
+        // Setup Canvas here
+    }
+    const draw = (p5: p5Types) => {
+        // Draw HTML5 Canvas here
+    }
+    return <Sketch setup={setup} draw={draw} />
+}
+
+export default p5Component;
+```
+
+
+You can use the <a href={"https://editor.p5js.org/"}>p5.js editor</a> online to create your graphic sketches beforehand and then integrate them into this React component.
+
+You can see examples of p5.js sketches at <a href={"https://p5js.org/examples/"}>p5js.org/examples/</a>
+
+
+### Setting up
+Here we will set up the canvas with the width of 500px and 400px. We will also include drawing two eclipses and an orange background.
+
+
+```tsx
+import Sketch from "react-p5";
+import p5Types from "p5";
+
+const p5Component = () => {
+    const setup = (p5: p5Types, canvasRef: any) => {
+        p5.createCanvas(500, 400).parent(canvasRef);
+    }
+    const draw = (p5: p5Types) => {
+        p5.background(255, 130, 20)
+        p5.ellipse(100, 100, 100)
+        p5.ellipse(300, 100, 100)
+    }
+    return <Sketch setup={setup} draw={draw} />
+}
+
+export default p5Component;
+```
+
+
+You can include the width and height of the canvas as Props
+
+```tsx
+import Sketch from "react-p5";
+import p5Types from "p5";
+
+interface Props {
+    width: number;
+    height: number;
+}
+
+const p5Component = ({width, height}: Props) => {
+    const setup = (p5: p5Types, canvasRef: any) => {
+        p5.createCanvas(width, height).parent(canvasRef);
+    }
+    const draw = (p5: p5Types) => {
+        p5.background(255, 130, 20)
+        p5.ellipse(100, 100, 100)
+        p5.ellipse(300, 100, 100)
+    }
+    return <Sketch setup={setup} draw={draw}/>
+}
+
+export default p5Component;
+```
+
+
+
+### The result
+The following is the html canvas output of the code above.
+<ExampleP5 width={500} height={400}/>
+
+
+
+You can continue to learn about how animations and game loops work with p5 by following this
+<a href={"https://www.youtube.com/watch?v=8j0UDiN7my4&list=PLglp04UYZK_PrN6xWo_nJ-8kzyXDyFUwi"}>link</a>.
+
+You can find the documentation for the react-p5 library <a href={"https://github.com/Gherciu/react-p5"}>here</a>.
+

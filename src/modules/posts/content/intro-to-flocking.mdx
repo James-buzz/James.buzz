@@ -1,0 +1,62 @@
+---
+title: 'Introduction to Flocking'
+abstract: "In this post, I'll introduce you to flocking and showcase how it works in a simulation."
+category: 'guide'
+published: '17/09/2022'
+thumbnail: 'flocking.jpg'
+---
+
+In the 1980s,
+<a href={"https://www.red3d.com/cwr/boids/"}>Craig Reynolds</a> developed a flocking model that simulates the approximate behaviours of birds,
+fish, or whatever might make entities move and flock to one another.
+
+Flocking is made up of three simple forces,
+that when combined, cause the entities to flock like birds.
+
+1. Alignment: Keep in the same direction as your neighbors.
+2. Separation: Don’t get too close to your neighbors.
+3. Cohesion: Stay near your neighbors.
+
+
+### Alignment
+Alignment is the tendency to move in the same direction as a group.
+For example, when you walk down stairs with a group of friends,
+you tend to move down the stairs together.
+This is because the force of alignment keeps your body and limbs moving in sync with those around you so that
+there’s no friction between them.
+
+In flocking simulation, alignment refers to how closely birds are packed together—the closer they get, the more
+likely they will collide with each other. The greater their density, or “clutter factor” (CF), the more it becomes harder for
+them to avoid crashing into each other due to their proximity and their inability—or unwillingness—to turn around
+quickly enough when needed
+
+<SimulatorComponent separation={false} alignment={true} cohesion={false} count={15} controls={false}/>
+
+
+### Separation
+The separation force is a repulsive force that keeps the birds from getting too close to each other. In this
+example, it’s proportional to the distance between the birds and inversely proportional to the square of that
+distance.
+
+<SimulatorComponent separation={true} alignment={false} cohesion={false} count={15} controls={false}/>
+
+
+### Cohesion
+In Flocking, you need to stay near your neighbors. This means that you should not be too far away from them and also
+that they shouldn't be too close. Cohesion is the tendency of a group to move as a whole entity, rather than
+individual objects or animals moving separately in random directions.
+
+For example: If we have three birds flying around in a flock, then there are two types of cohesion between these
+bodies:
+- Physical/physical attraction – Birds will fly toward each other due to their physical properties (like feathers).
+- Social/social attraction – Birds will fly toward others based on their social status or relationship with other members of the flock (if one bird is dominant over another).
+
+<SimulatorComponent separation={false} alignment={false} cohesion={true} count={15} controls={false}/>
+
+
+## The result
+The result of combining all three forces: Alignment, Separation, and Cohesion is a flocking simulation that approximates the behaviours of birds, fish, or any other organism that moves and flocks to one another.
+
+<SimulatorComponent colours={true} separation={true} alignment={true} cohesion={true} count={50} controls={false} />
+
+
