@@ -49,11 +49,6 @@ const WalksPage: NextPage = (props: Props) => {
                                     <Moment parse={"DD/MM/YYYY"} format={"D MMM YYYY"}>{walk.meta.published}</Moment>
                                 </div>
                                 <div>⋅</div>
-
-                                <div className={"font-normal font-sans"}>
-                                    4 miles
-                                </div>
-                                <div>⋅</div>
                                 <div className={"uppercase tracking-wider font-serif"}>
                                     {walk.meta.category}
                                 </div>
