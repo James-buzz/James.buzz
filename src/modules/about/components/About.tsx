@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import MeImg from "../../../../public/assets/common/img/me.jpg";
+import BlurMeImg from "../../../../public/assets/common/img/blur-me.jpg";
 import Image from "next/image";
 
 import TwitterIcon from "../../../../public/assets/modules/about/svg/twitter.svg";
@@ -32,7 +33,8 @@ const About = () => {
                             <Image
                                 alt={"About Image"}
                                 src={MeImg}
-                                loading={'lazy'}
+                                placeholder={'blur'}
+                                blurDataURL={BlurMeImg.src}
                             />
                         </div>
                     </div>

@@ -7,14 +7,16 @@ const FeaturedLinks = () => {
             abstract: 'Github is where you can find my open source projects and portfolio. Click to see my profile.',
             tags: [],
             href: 'https://github.com/James-buzz',
-            imageURL: '/assets/modules/home/github.jpg'
+            imageURL: '/assets/modules/home/github.jpg',
+            blurImageURL: '/assets/modules/home/blur-github.jpg',
         },
         {
             name: 'LinkedIn',
             abstract: 'LinkedIn is where you can learn about my work experience and connect with me professionally. Click to see my LinkedIn.',
             tags: ['java', 'ui'],
             href: 'https://www.linkedin.com/in/james-lomax/',
-            imageURL: '/assets/modules/home/linkedin.jpg'
+            imageURL: '/assets/modules/home/linkedin.jpg',
+            blurImageURL: '/assets/modules/home/blur-linkedin.jpg',
         }
     ]
     return (
@@ -25,6 +27,7 @@ const FeaturedLinks = () => {
                         link={link.href}
                         title={link.name}
                         backgroundURL={link.imageURL}
+                        backgroundBlurURL={link.blurImageURL}
                         abstract={link.abstract}
                         small={true}
                     />

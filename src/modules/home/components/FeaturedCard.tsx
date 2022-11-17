@@ -9,6 +9,7 @@ interface Props {
     title: string;
     date?: string;
     backgroundURL: string;
+    backgroundBlurURL: string;
     abstract: string;
     invert?: boolean;
     link?: string;
@@ -42,7 +43,8 @@ const FeaturedCard = (props: Props) => {
                     layout={'fill'}
                     objectFit={'cover'}
                     objectPosition={'center'}
-                    loading={'lazy'}
+                    placeholder={'blur'}
+                    blurDataURL={props.backgroundBlurURL}
                 />
                 {/*
                     Card Hover background

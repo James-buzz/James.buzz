@@ -58,6 +58,7 @@ const Homepage = (props: Props) => {
                                         title={recent.meta.title}
                                         date={recent.meta.published}
                                         backgroundURL={`/assets/modules/posts/img/${recent.meta.thumbnail}`}
+                                        backgroundBlurURL={`/assets/modules/posts/img/blur-${recent.meta.thumbnail}`}
                                         abstract={recent.meta.abstract}
                                     />
                                 </div>
