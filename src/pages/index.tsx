@@ -22,7 +22,8 @@ const Homepage = (props: Props) => {
     // Grab the PixiComponent as NextJS dynamic
     // Render the PixiComponent clientside rather than serverside
     const PixiComponent = dynamic(() => import('../modules/home/components/Pixi/PixiComponent'), {
-        ssr: false
+        ssr: false,
+        loading: () => <></>
     });
     return (
         <>
