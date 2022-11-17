@@ -10,14 +10,17 @@ import 'nprogress/nprogress.css';
 // Bind NProgress javascript library to NextJS loading event
 Router.events.on('routeChangeStart', () => {
     NProgress.start();
-})
+});
 Router.events.on('routeChangeComplete', () => {
     NProgress.done();
-})
+});
 Router.events.on('routeChangeError', () => {
     NProgress.done();
-})
+});
 
+/**
+ * Application
+ */
 function MyApp({Component, pageProps}: AppProps) {
     return (
         <ThemeProvider defaultTheme={'dark'} enableSystem={true} attribute={"class"}>
