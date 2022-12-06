@@ -18,7 +18,7 @@ const Jumbotron = () => {
                 Hello, my name is James
             </h3>
             {/* Welcome to title */}
-            <h1 className={classNames(
+            <h1 id={"christmas"} className={classNames(
                 "mt-1",
                 "font-medium text-8xl",
                 "text-gray-700 font-serif",

@@ -8,6 +8,7 @@ import {getRecentPosts} from "../modules/posts/lib/posts";
 import {Post} from "../modules/posts/types/Post";
 import Head from "next/head";
 import FeaturedLinks from "../modules/home/components/FeaturedLinks";
+import Snowfall from 'react-snowfall'
 
 /**
  * Homepage
@@ -35,6 +36,45 @@ const Homepage = (props: Props) => {
                 <PixiComponent/>
                 {/* Jumbotron */}
                 <Jumbotron/>
+                {/* Snow */}
+                <div className="snowflakes" aria-hidden="true">
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                </div>
                 {/* Content */}
                 <Container className={"pt-20 sm:px-6 px-8 mb-10"}>
                     {/* Social Media Links */}
